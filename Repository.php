@@ -1,4 +1,4 @@
-+<?php
+<?php
 
 require_once('Post.php');
 
@@ -34,12 +34,14 @@ class Repository
 
 	public function add($post)
 	{
-		$query = $this->pdo->prepare("INSERT INTO `base` 
+	    $query = $this->pdo->prepare("INSERT INTO `base` 
                                                   SET `username`=:username, 
-                                                      `message`=:message,
-                                                      `date`=CURRENT_TIMESTAMP");
+                                                      `message`=:message
+                                ");
+
 		$query->execute([
 		        'username'=> $post->username,
-                'message'=> $post->message,]);
+                'message'=> $post->message,
+            ]);
 	}
 }
