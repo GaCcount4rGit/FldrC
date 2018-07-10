@@ -10,7 +10,7 @@ if (isset($_POST['username']) & $_POST['username'] !== " ")
 
 if (isset($_POST['message']) && $_POST['message'] !== " ")
 {
-    $message =  htmlspecialchars($_POST['message']);
+    $message =  htmlspecialchars(trim($_POST['message']));
 
 }else{
     die("Wrong data");
